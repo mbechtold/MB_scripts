@@ -1,4 +1,7 @@
 
+# Git rebasing to upstream
+https://stackoverflow.com/questions/6850284/git-rebasing-to-upstream
+
 # Git: How to ensure new branch is based on upstream master
 # If you have changes in the downstream master you want to keep, 
 # I would do the following to keep the downstream master the same but create a new branch on the upstream master.
@@ -7,6 +10,9 @@ git fetch upstream
 git reset --hard upstream/master
 git push --set-upstream origin upstream-master
 
+# Clean up a fork and restart it from the upstream
+https://stackoverflow.com/questions/9646167/clean-up-a-fork-and-restart-it-from-the-upstream
+
 # amend last commit
 git commit --amend --no-edit
 # if last commit already pushed
@@ -14,3 +20,12 @@ git push -f origin some_branch
 
 # cherry-pick
 https://stackoverflow.com/questions/37387501/merging-part-of-git-branch-into-master
+
+# Resolving merge conflict with vimdiff
+https://www.rosipov.com/blog/use-vimdiff-as-git-mergetool/
+
+# merge changes using vimdiff
+https://stackoverflow.com/questions/27832630/merge-changes-using-vimdiff
+
+# git help, e.g.
+https://git-scm.com/book/de/v1/Git-Branching-Einfaches-Branching-und-Merging
