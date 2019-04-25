@@ -1,4 +1,5 @@
 
+# Git: How to ensure new branch is based on upstream master
 # If you have changes in the downstream master you want to keep, 
 # I would do the following to keep the downstream master the same but create a new branch on the upstream master.
 git checkout -b upstream-master
