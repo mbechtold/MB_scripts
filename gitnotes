@@ -1,0 +1,8 @@
+
+# amend last commit
+git commit --amend --no-edit
+# if last commit already pushed
+git push -f origin some_branch   
+
+# cherry-pick
+https://stackoverflow.com/questions/37387501/merging-part-of-git-branch-into-master
