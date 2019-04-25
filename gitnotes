@@ -1,4 +1,11 @@
 
+# If you have changes in the downstream master you want to keep, 
+# I would do the following to keep the downstream master the same but create a new branch on the upstream master.
+git checkout -b upstream-master
+git fetch upstream
+git reset --hard upstream/master
+git push --set-upstream origin upstream-master
+
 # amend last commit
 git commit --amend --no-edit
 # if last commit already pushed
