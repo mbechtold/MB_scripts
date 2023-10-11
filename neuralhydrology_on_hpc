@@ -1,0 +1,38 @@
+
+# Get on a compute node (from login node via putty or via interactive shell with ondemand)
+srun --account=lp_ees_swm_ls_001 --nodes=1 --time=05:00:00 --ntasks-per-node=1 --gpus-per-node=0 --partition=interactive --clusters=wice --x11 --pty bash -l
+
+# Install miniconda
+wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+
+# Open miniconda.sh with vim
+# Change to your vsc number
+# PREFIX="/data/leuven/317/vsc31786/miniconda3-wice
+#
+
+# Make it an executable
+chmod a+x miniconda3-wice.sh
+
+# Execute command and follow instructions
+./miniconda3-wice.sh
+# Update conda environment
+conda update -n base -c defaults conda
+
+# get yml files
+cd /data/leuven/317/vsc31786/miniconda3-wice
+rsync -av /staging/leuven/stg_00024/OUTPUT/michelb/miniconda3-wice/*yml
+# install conda environment using yml file
+conda env create -f environment_cpu.yml
+
+#Activate new environment
+conda activate neuralhydrology-cpu
+
+# add neuralhydrology to this environment
+cd $VSC_DATA
+
+git clone https://github.com/neuralhydrology/neuralhydrology.git
+cd  neuralhydrology
+pip install -e .
+
+### Now you are set for the first example 
+
