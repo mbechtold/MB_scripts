@@ -25,6 +25,7 @@ rsync -av /staging/leuven/stg_00024/OUTPUT/michelb/miniconda3-wice/*yml
 conda env create -f environment_cpu.yml
 
 #Activate new environment
+source activate neuralhydrology-cpu
 conda activate neuralhydrology-cpu
 
 # add neuralhydrology to this environment
@@ -33,6 +34,8 @@ cd $VSC_DATA
 git clone https://github.com/neuralhydrology/neuralhydrology.git
 cd  neuralhydrology
 pip install -e .
+
+python -m ipykernel install  --prefix=${VSC_HOME}/.local/ --name neuralhydrology-cpu
 
 ### Now you are set for the first example 
 
