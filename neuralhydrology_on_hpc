@@ -23,10 +23,17 @@ cd /data/leuven/317/vsc31786/miniconda3-wice
 rsync -av /staging/leuven/stg_00024/OUTPUT/michelb/miniconda3-wice/*yml
 # install conda environment using yml file
 conda env create -f environment_cpu.yml
+# or for gpu environment
+conda env create -f environment_cuda11_8.yml
 
 #Activate new environment
 source activate neuralhydrology-cpu
 conda activate neuralhydrology-cpu
+# or
+conda activate neuralhydrology-gpu
+
+# for pytorch with CUDA support (i.e. for neuralhydrology-gpu) run also
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 
 # add neuralhydrology to this environment
 cd $VSC_DATA
